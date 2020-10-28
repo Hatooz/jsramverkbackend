@@ -8,21 +8,23 @@ let db = new sqlite3.Database(dbPath);
 //Get personal presentation
 router.get('/',(req, res) => {
 
-    let sql = `SELECT * FROM info`
-    let data;
-    let info;
-    db.all(sql, [], (err, rows) => {
-        if (err) {
-          throw err;
-        }
-        rows.forEach((row) => {          
-          info = row.aboutme
-        });
-        data = {
-          presentation: info
-      };      
-      res.json(data.presentation);
-      });
+    // let sql = `SELECT * FROM info`
+    // let data;
+    // let info;
+    // db.all(sql, [], (err, rows) => {
+    //     if (err) {
+    //       throw err;
+    //     }
+    //     rows.forEach((row) => {          
+    //       info = row.aboutme
+    //     });
+    //     data = {
+    //       presentation: info
+    //   };      
+    //   // res.json(data.presentation);
+    //   res.send("hello")
+    //   });
+    res.send("hello")
       
 });
 

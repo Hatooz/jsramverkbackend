@@ -20,7 +20,17 @@ app.use('/reports', week)
 app.use('/register', register)
 app.use('/login', login)
 
-const port = 1337;
+app.get('/', (req, res) => {
+    res.send(`<h1>Plant World</h1><br>
+    Route /all = whole json <br>
+    Route /names = Names of all plants <br>
+    Route /color/<color> = All plants that can have <color> as a color <br>`);
+});
 
-app.listen(port, () => console.log(`Example API listening on port ${port}!`));
+const port = 1338;
 
+// app.listen(port, () => console.log(`Example API listening on port ${port}!`));
+
+const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+module.exports = server;
