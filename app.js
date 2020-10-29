@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
     res.send(`<h1>Plant World</h1><br>
     Route /all = whole json <br>
     Route /names = Names of all plants <br>
-    Route /color/<color> = All plants that can have <color> as a color <br>`);
+    Route /color/<color> = All plants that can have <color> as a color. <br>`);
 });
 
 const port = 1338;
