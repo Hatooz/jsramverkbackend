@@ -17,7 +17,8 @@ router.post('/', (req, res) => {
         }
         const email = row.email;
         const hash = row.password;
-        const secret = process.env.JWT_SECRET;
+        const secret = 'longsecret'
+        // const secret = process.env.JWT_SECRET;
 
 
         let token;
