@@ -60,7 +60,7 @@ router.put('/',
 
 function checkToken(req, res, next) {
     const token = req.headers['x-access-token'];
-    const secret = process.env.JWT_SECRET;
+    const secret = 'longsecret';
     console.log(token)
     console.log(secret)
 
