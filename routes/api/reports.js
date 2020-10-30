@@ -13,9 +13,18 @@ const jwt = require('jsonwebtoken');
 
 //Get personal presentation
 router.get('/week/:id', (req, res) => {
-    const number = req.params.id;  
-    const week = weeks.find(week => week.id === number)    
-    res.send(week)
+    let sql = `SELECT * FROM texts WHERE kmom = ?`
+    db.get(sql, [req.params.id], (err, row) => {
+        if (err) {
+            throw err;
+        }
+        console.log(row)
+        res.send(row)
+    })
+    
+    // // const number = req.params.id;  
+    // const week = weeks.find(week => week.id === number)    
+    // res.send(week)
 });
 
 router.post('/', 
@@ -52,6 +61,8 @@ router.put('/',
 function checkToken(req, res, next) {
     const token = req.headers['x-access-token'];
     const secret = process.env.JWT_SECRET;
+    console.log(token)
+    console.log(secret)
 
     jwt.verify(token, secret, function(err, decoded) {
         if (err) {
@@ -66,60 +77,6 @@ function checkToken(req, res, next) {
 }
 
 
-
-const weeks = [
-        {
-            id: "1",
-            repo: "<h2>Github repo <a href='https://github.com/Hatooz/jsramverk'> here</a></h2><br>",
-            setup: `<h2>Project setup</h2> 
-            npm install
-            
-            
-            <h2> Compiles and hot-reloads for development</h2>
-            
-            npm run serve
-            
-            
-            <h2> Compiles and minifies for production</h2>
-            
-            npm run build
-            
-            
-            <h2> Lints and fixes files </h2>
-            
-            npm run lint
-            
-            
-            <h2> Customize configuration</h2>
-            See [Configuration Reference](https://cli.vuejs.org/config/).`
-        },
-        {
-            id: "2",
-            repo: "<h2>Github repo <a href='https://github.com/Hatooz/jsramverk'> here</a></h2><br>",
-            setup: `<h2>Project setup</h2> 
-            npm install
-            
-            
-            <h2> Compiles and hot-reloads for development</h2>
-            
-            npm run serve
-            
-            
-            <h2> Compiles and minifies for production</h2>
-            
-            npm run build
-            
-            
-            <h2> Lints and fixes files </h2>
-            
-            npm run lint
-            
-            
-            <h2> Customize configuration</h2>
-            See [Configuration Reference](https://cli.vuejs.org/config/).`
-        }
-]
-   
 
 
 

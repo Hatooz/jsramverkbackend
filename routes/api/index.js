@@ -3,7 +3,7 @@ var router = express.Router();
 const path = require('path')
 const dbPath = path.resolve(__dirname, '../../db/database.js')
 const sqlite3 = require('sqlite3').verbose();
-let db = new sqlite3.Database(dbPath);
+let db = require('../../db/database.js');
 
 //Get personal presentation
 router.get('/',(req, res) => {
