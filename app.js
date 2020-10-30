@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require('cors');
 const morgan = require('morgan');
 const bodyParser = require("body-parser");
+const http =  require('http').Server(express);
+const socketio = require('socket.io')(http);
 
 const app = express();
 
@@ -27,9 +29,20 @@ app.get('/', (req, res) => {
     Route /color/<color> = All plants that can have <color> as a color. <br>`);
 });
 
-const port = 1338;
+socketio.on("connection", socket => {
+    console.log("user connected");  
+    socket.on('message', function (message) {
+        console.log(message);
+        socketio.emit('message', message);
+    });
+})
+
+
+
+const port = 1337;
 
 // app.listen(port, () => console.log(`Example API listening on port ${port}!`));
+
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
