@@ -43,7 +43,7 @@ describe('Reports', () => {
         it('Register new user', (done) => {
             chai.request(server)            
                 .post('/register')
-                .send({ email: 'chaiLatte3', password: '12345678' })
+                .send({ email: 'chaiLatte4', password: '12345678' })
                 .end(function (err, res) {
                     expect(err).to.be.null;
                     expect(res).to.have.status(200);
@@ -58,7 +58,7 @@ describe('Reports', () => {
         it('Login', (done) => {
             chai.request(server)            
                 .post('/login')
-                .send({ email: 'chaiLatte3', password: '12345678' })
+                .send({ email: 'chaiLatte4', password: '12345678' })
                 .end(function (err, res) {
                     expect(err).to.be.null;
                     expect(res).to.have.status(200);

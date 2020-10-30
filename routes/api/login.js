@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const path = require('path')
-const dbPath = path.resolve(__dirname, '../../db/texts.sqlite')
+const dbPath = path.resolve(__dirname, '../../db/database.js');
 const sqlite3 = require('sqlite3').verbose();
-let db = new sqlite3.Database(dbPath);
+let db = require('../../db/database.js');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 var salt = bcrypt.genSaltSync(10);

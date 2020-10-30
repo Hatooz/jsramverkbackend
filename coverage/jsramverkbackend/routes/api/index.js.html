@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.89% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/9</span>
+                <span class='fraction'>8/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.89% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/9</span>
+                <span class='fraction'>8/16</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -98,23 +98,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -122,30 +122,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var express = require('express');
 var router = express.Router();
 const path = require('path')
-const dbPath = path.resolve(__dirname, '../../db/texts.sqlite')
+const dbPath = path.resolve(__dirname, '../../db/database.js')
 const sqlite3 = require('sqlite3').verbose();
 let db = new sqlite3.Database(dbPath);
 &nbsp;
 //Get personal presentation
 router.get('/',<span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
 &nbsp;
-    // let sql = `SELECT * FROM info`
-    // let data;
-    // let info;
-    // db.all(sql, [], (err, rows) =&gt; {
-    //     if (err) {
-    //       throw err;
-    //     }
-    //     rows.forEach((row) =&gt; {          
-    //       info = row.aboutme
-    //     });
-    //     data = {
-    //       presentation: info
-    //   };      
-    //   // res.json(data.presentation);
-    //   res.send("hello")
-    //   });
-<span class="cstat-no" title="statement not covered" >    res.send("hello")</span>
+    let sql = <span class="cstat-no" title="statement not covered" >`SELECT * FROM info`</span>
+    let data;
+    let info;
+<span class="cstat-no" title="statement not covered" >    db.all(sql, [], <span class="fstat-no" title="function not covered" >(e</span>rr, rows) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >          throw err;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        rows.forEach(<span class="fstat-no" title="function not covered" >(r</span>ow) =&gt; {          </span>
+<span class="cstat-no" title="statement not covered" >          info = row.aboutme</span>
+        });
+<span class="cstat-no" title="statement not covered" >        data = {</span>
+          presentation: info
+      };      
+<span class="cstat-no" title="statement not covered" >      res.json(data.presentation);</span>
+    
+      });
+    
       
 });
 &nbsp;
@@ -157,7 +157,7 @@ module.exports = router;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Oct 27 2020 22:25:25 GMT+0100 (GMT+01:00)
+                at Fri Oct 30 2020 09:49:59 GMT+0100 (GMT+01:00)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
