@@ -15,8 +15,7 @@ describe('Reports', () => {
                 .get("/reports/week/1")
                 .end((err, res) => {
                     res.should.have.status(200);
-                    res.body.should.be.an("object");
-                    res.body.id.should.equal("1");                    
+                                         
                     // res.body.data.should.be.an("array");
                     // res.body.data.length.should.be.above(0);
 
@@ -30,8 +29,7 @@ describe('Reports', () => {
                 .get("/reports/week/2")
                 .end((err, res) => {
                     res.should.have.status(200);
-                    res.body.should.be.an("object");
-                    res.body.id.should.equal("2");                    
+                                        
                     // res.body.data.should.be.an("array");
                     // res.body.data.length.should.be.above(0);
 
