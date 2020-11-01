@@ -1,0 +1,12 @@
+build:
+  nodes:
+    coverage:
+      tests:
+        before:
+        - npm install       
+        override:
+          - 
+            command: npm test
+            coverage:
+              file: coverage/clover.xml
+              format: clover
